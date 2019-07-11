@@ -196,7 +196,8 @@ static boolByte _readMidiFileTrack(FILE *midiFile, const int trackNumber,
 
       break;
 
-    case 0x7f:
+    case 0xf7:
+    case 0xf0:
       logUnsupportedFeature("MIDI files containing sysex events");
       free(trackData);
       freeMidiEvent(midiEvent);
